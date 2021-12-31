@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Formulario con javascript</title>
+</head>
+<body>
+    <form id="formulario">
+        Nombre: <input type="text" name="nombre" value="Juan">
+        <br>
+        Apellido: <input type="text" name="apellido" value="Perez">
+    </form>
+<!-- El onclick es un evento que manda a llamar una funcion de javascript cuando el usuario de click sobre el elemento que lo contiene -->
+    <button onclick="mostrarValores()">
+        Mostrar
+    </button>
+
+    <div id="valores">
+
+    </div>
+
+    <script>
+        function mostrarValores(){
+            let formulario = document.forms['formulario'];
+
+            let texto = '';
+
+            let nombre = formulario['nombre'];
+            let apellido = formulario['apellido'];
+
+            texto = nombre.value + '<br/> <br/>' + apellido.value;
+
+            // for(let elemento of formulario){
+            //     texto += elemento.value + '<br/>'; //Asi accedemos al valor de un elemento de html en un formulario
+            // }
+
+            document.getElementById('valores').innerHTML = texto;
+        }
+    </script>
+</body>
+</html>

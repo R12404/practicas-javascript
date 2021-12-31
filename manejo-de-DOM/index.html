@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM con Javascript</title>
+    <style> 
+        .azul{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id='cabecero' class="azul">Ejemplo DOM con Javascript</h1>
+    <p id='parrafo' class="azul">¡saludos!</p>
+    <p id='parrafo' class="azul">Hola!</p>
+    <p id='parrafo' class="azul">¿Cómo estás?</p>
+    <p id='parrafo' class="azul">¡Te ves igual, te veo igual!</p>
+    <script>
+        // let cabecero = document.getElementById('cabecero'); //De esta manera accedemos al elemento de tipo parrafo
+        let cabecero = document.getElementById('cabecero').innerHTML;
+        console.log('Valor cabecero: ' + cabecero); //A través del metodo innerHTML recuperamos el valor del elemento
+        
+        // Accediendo al valor del elemento de parrafo a través de su id
+        let parrafo = document.getElementById('parrafo').innerHTML;
+        console.log('Valor parrafo: ' + parrafo);
+
+        // Modificando el contenido del cabezero
+        cabecero.innerHTML = "Cambio de cabecero";
+
+        // Modificando el contenido del parrafo
+        parrafo.innerHTML = 'Nuevo valor del parrafo';
+
+        // Tomando las etiquetas de tipo parrafo
+        // De esta manera no necesitaremos agregar un id a los elementos de html
+        // let parrafos = document.getElementsByTagName('p');
+        // console.log(`No. Parrafos: ${parrafos.length}`);
+        // for(let i = 0; i < parrafos.length; i++){
+        //     console.log(`i: ${i} -- ${parrafos[i].innerHTML}`);
+        // }
+        
+        // Tomando las etiquetas segun la clase que tengan definida
+        // let elementos = document.getElementsByClassName('azul');
+        // console.log(`No. elementos: ${elementos.length}`);
+        // for(let i = 0; i < elementos.length; i++){
+        //     console.log(`i: ${i} -- ${elementos[i].innerHTML}`);
+        // }
+        // Tomando las etiquetas segun la clase que tengan definida, pero usando otro tipo de ciclo for
+        let elementos1 = document.getElementsByClassName('azul');
+        console.log(`No. elementos1: ${elementos1.length}`);
+        for(let elemento of elementos1){
+            console.log(`${elemento.innerHTML}`);
+        }
+
+        // Metodo querySelectorAll para recuperar un elemento con una clase especifica 
+        let parrafos2 = document.querySelectorAll('p.azul'); //Aqui recuperamos todos los elementos de tipo parrafo que tengan la clase azul
+        console.log(`No. Parrafos: ${parrafos2.length}`);
+        for( let parrafo of parrafos2){
+            console.log(`${parrafo.innerHTML}`)
+        }
+    </script>
+</body>
+</html>

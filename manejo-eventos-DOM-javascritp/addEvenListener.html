@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo DOM con Javascript</h1>
+    <br/>
+    Nombre: <input type="text" id="nombre">
+    <br><br>
+    Apellido: <input type="text" id="apellido">
+
+    <script>
+        // Usando addEventListener ya no será necesario usar el on 
+        //Utilizando funciones flecha
+        // Si utilizamos funciones flecha ya no podremos reutilizar el código
+        document.getElementById('nombre').addEventListener('focus', (evento) => {
+            evento.target.style.background = 'blue'; 
+        }); //El metodo addEventListener es utilizado cuando queremos asignar eventos a un elemento sin necesidad de poner el evento al elemento y posteriormente ejecutarlo a través de una función 
+        document.getElementById('nombre').addEventListener('blur', (evento) => {
+            evento.target.style.background = '';
+        }); 
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        document.getElementById('apellido').addEventListener('blur', cambiar2);
+
+        function cambiar(evento){
+            // La palabra target nos retorna el elemento input text tal cual como si hubieramos utilizado el operador this 
+            let componente = evento.target;
+            componente.style.background = 'yellow';
+        }
+
+        function cambiar2(evento){
+            // La palabra target nos retorna el elemento input text tal cual como si hubieramos utilizado el operador this 
+            let componente = evento.target;
+            componente.style.background = 'white';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- Cambiando los atributos de nuestros elementos HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo del DOM</h1>
+    <button onclick="mostrar()">Mostrar</button>
+    <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png" alt="Logo HTML5">
+
+    <script>
+        function mostrar(){
+            // document.getElementById('titulo').innerHTML += 'Cambio de titulo';
+            document.getElementById('imagen').src = 'html5.png'; //Cambiando la ruta de la imagen de nuestro de elemento html img
+
+            // Cambiando los estilos de nuestros elementos HTML con javascript
+            document.getElementById('titulo').style.color = 'blue';
+        }
+    </script>
+</body>
+</html>

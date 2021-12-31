@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Utilizando el evento onload sobre el body de nuestra página HTML (este evento se ejecuta cuando termina de cargarse nuesta página web) -->
+<body onload="entrar()">
+        <!-- Asignando un nuevo valor al titulo -->
+        <h1 onclick="cambiarTexto(this)">Manejo del DOM</h1>
+        <h2 id="subtitulo">Subtitulo</h2>
+        <button onclick="mostrar()">Mostrar</button>
+        <!-- <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png" alt="Logo HTML5"> -->
+        <div id="mostrar">
+
+        </div>
+    
+        <script>
+    
+            // Asociando un evento a un elemento
+            document.getElementById('subtitulo').onclick = cambiarSubtitulo;
+    
+            function mostrar(){
+                // document.getElementById('titulo').innerHTML += 'Cambio de titulo';
+                document.getElementById('imagen').src = 'html5.png'; //Cambiando la ruta de la imagen de nuestro de elemento html img
+    
+                // Cambiando los estilos de nuestros elementos HTML con javascript
+                document.getElementById('titulo').style.color = 'blue';
+            }
+    
+            function cambiarTexto(titulo){
+                titulo.innerHTML = 'Nuevo titulo';
+            }
+    
+            function cambiarSubtitulo(){
+                document.getElementById('subtitulo').innerHTML = 'Nuevo subtitulo'
+            }
+
+            function entrar(){
+                alert('Entrando a la página web'); //Generando una alerta en nuestra página web
+                // Averiguando si las cookies estan habilitadas en nuestra página web
+                let texto = '';
+
+                if(navigator.cookieEnabled){
+                    texto += 'Cookies están habilitadas';
+                }
+                else {
+                    texto += 'Cookies estan desahilitadas';
+                }
+
+                document.getElementById('mostrar').innerHTML = texto;
+            }
+        </script>
+</body>
+</html>

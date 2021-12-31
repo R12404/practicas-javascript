@@ -1,0 +1,35 @@
+<!-- Estos son eventos para cuando nos posicionamos con el raton sobre un elemento o nos quitamos de el -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- onmouseover evento especifico para cuando estemos sobre un elemento con el raton - onmouseout para cuando ya no tenemos el raton sobre el elemento especifico -->
+    <h1 id="titulo" onmouseover="rojo(this)" onmouseout="azul(this)">Manejo de DOM con Javascript</h1>
+    <!-- onmousedown envento para cuando damos click sobre un elemento - onmouseup para cuando dejamos de dar click sobre el elemento -->
+    <p id="titulo1" onmousedown="rojo1(this)" onmouseup="azul1(this)">Manejo de DOM con Javascript</p>
+    <br/>
+    Nombre: <input type="text" >
+
+    <script>
+        function rojo(titulo){
+            titulo.style.color = 'red';
+        }
+        function azul(titulo){
+            titulo.style.color = 'blue';
+        }
+        function rojo1(titulo){
+            titulo.style.color = 'red';
+        }
+        
+        function azul1(titulo){
+            titulo.style.color = 'blue';
+        }
+    </script>
+</body>
+</html>
